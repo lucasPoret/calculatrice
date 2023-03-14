@@ -46,11 +46,18 @@
 #affichage{
     background-color: white;
     border-radius: 0px 0px 12px 12px;
-    border: 1px solid black;
+    border:solid black;
+    border-width: 0px 1px 1px 1px;
     text-align: left;
-    height: 7vw;; 
+    height: 7vw; 
     font-size: 30px;
     margin-bottom: 20px;
+}
+
+#calcul{
+    float: left;
+    order: 1;
+    margin: 0px 5px;
 }
 
 #previous{

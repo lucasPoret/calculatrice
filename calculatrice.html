@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Calculatrice</title>
         <link rel="stylesheet" href="calculatrice.css">
+        <script src="calculatrice.js"></script>
     </head>
 
     <body>
@@ -13,7 +14,7 @@
             <div id="previous">
                 <div id="resultat"></div>
                 <div id="prevCalc"></div>
-                <div id="equal">=</div>
+                <div id="equal"></div>
             </div>
 
             <div id="affichage">
@@ -22,30 +23,31 @@
 
             <div class="clavier">
 
-                <div class="bouton" id="bouton7">7</div>
-                <div class="bouton" id="bouton8">8</div>
-                <div class="bouton" id="bouton9">9</div>
-                <div class="bouton" id="boutonDiv">/</div>
-                <div class="bouton" id="boutonC">C</div>
+                <div class="bouton" id="bouton7" onclick=Write(7)>7</div>
+                <div class="bouton" id="bouton8" onclick=Write(8)>8</div>
+                <div class="bouton" id="bouton9" onclick=Write(9)>9</div>
+                <div class="bouton" id="boutonDiv" onclick=Write("/")>/</div>
+                <div class="bouton" id="boutonEffacer" onclick=Erase()>⌫</div>
+                <div class="bouton" id="boutonC" onclick=Clear()>C</div>
 
-                <div class="bouton" id="bouton4">4</div>
-                <div class="bouton" id="bouton5">5</div>
-                <div class="bouton" id="bouton6">6</div>
-                <div class="bouton" id="boutonFois">x</div>
-                <div class="bouton" id="boutonPg">(</div>
-                <div class="bouton" id="boutonPd">)</div>
-
-
-                <div class="bouton" id="bouton1">1</div>
-                <div class="bouton" id="bouton2">2</div>
-                <div class="bouton" id="bouton3">3</div>
-                <div class="bouton" id="boutonMoins">-</div>
+                <div class="bouton" id="bouton4" onclick=Write(4)>4</div>
+                <div class="bouton" id="bouton5" onclick=Write(5)>5</div>
+                <div class="bouton" id="bouton6" onclick=Write(6)>6</div>
+                <div class="bouton" id="boutonFois"onclick=Write("*")>*</div>
+                <div class="bouton" id="boutonPg" onclick=Write("(")>(</div>
+                <div class="bouton" id="boutonPd" onclick=Write(")")>)</div>
 
 
-                <div class="bouton" id="bouton0">0</div>
-                <div class="bouton" id="boutonPoint">.</div>
-                <div class="bouton" id="boutonPlus">+</div>
-                <div class="bouton" id="boutonEgal">=</div>
+                <div class="bouton" id="bouton1" onclick=Write(1)>1</div>
+                <div class="bouton" id="bouton2" onclick=Write(2)>2</div>
+                <div class="bouton" id="bouton3" onclick=Write(3)>3</div>
+                <div class="bouton" id="boutonMoins" onclick=Write("-")>-</div>
+
+
+                <div class="bouton" id="bouton0"onclick=Write(0)>0</div>
+                <div class="bouton" id="boutonPoint"onclick=Write(".")>.</div>
+                <div class="bouton" id="boutonPlus" onclick=Write("+")>+</div>
+                <div class="bouton" id="boutonEgal" onclick=Calculate()>=</div>
 
                 
             </div>
