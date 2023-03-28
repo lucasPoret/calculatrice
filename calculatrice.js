@@ -35,15 +35,45 @@ class Calculatrice{
     }
 
     Write(x) {
-        document.getElementById("calcul").innerText += x;
+        if(document.getElementById("calcul").innerText==="" && this.list.length!==0){
+            document.getElementById("calcul").innerText=this.list;
+            document.getElementById("calcul").innerText += x;
+            document.getElementById("resultat").innerText="";
+            document.getElementById("prevCalc").innerText="";
+            document.getElementById("equal").innerText="";
+        }
+        else{
+            document.getElementById("calcul").innerText += x;
+        }
     }
 
     Clear() {
+        if(document.getElementById("boutonC").innerText==="CA"){
+            document.getElementById("boutonC").innerText="C";
+            document.getElementById("resultat").innerText="";
+            document.getElementById("prevCalc").innerText="";
+            document.getElementById("equal").innerText="";
+            document.getElementById("calcul").innerText="";
+            document.getElementById("boutonC").innerText="C";
+            this.list=[];
+        } 
+        else{
         document.getElementById("calcul").innerText = "";
+        }
     }
 
     Erase() {
-        document.getElementById("calcul").innerText = document.getElementById("calcul").innerText.slice(0, -1);
+        if(document.getElementById("calcul").innerText==="" && this.list.length!==0){
+            document.getElementById("calcul").innerText=this.list;
+            document.getElementById("calcul").innerText = document.getElementById("calcul").innerText.slice(0, -1);
+            document.getElementById("resultat").innerText="";
+            document.getElementById("prevCalc").innerText="";
+            document.getElementById("equal").innerText="";
+        }
+        else{
+            document.getElementById("calcul").innerText = document.getElementById("calcul").innerText.slice(0, -1);
+    
+        }
     }
 
     Calculate(){
@@ -53,7 +83,9 @@ class Calculatrice{
             document.getElementById("prevCalc").innerText=document.getElementById("calcul").innerText;
             document.getElementById("resultat").innerText=this.result;
             document.getElementById("equal").innerText="=";
-            this.Clear();
+            this.list[0]=( document.getElementById("prevCalc").innerText=document.getElementById("calcul").innerText);
+            document.getElementById("calcul").innerText = "";
+            document.getElementById("boutonC").innerText="CA";
         } catch(e){
             if (e instanceof SyntaxError){
              document.getElementById("resultat").innerText="SyntaxError";
